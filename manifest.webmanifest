@@ -1,0 +1,9 @@
+{
+  "name": "Consulta de Crachás",
+  "short_name": "Crachás",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff6200"
+}
+

@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #1e1e1e;
+    color: white;
+    display: flex;
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: orangered;
+    height: 100vh;
+    padding: 20px;
+}
+
+ .sidebar img{
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+ }
+
+.sidebar h2 {
+    margin: 0;
+}
+
+.sidebar p {
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/* CONTEÚDO */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+/* BUTTON */
+button {
+    padding: 10px 20px;
+    background: #ec7000;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #d46000;
+}
+
+/* STATUS */
+.ativo {
+    color: #00ff9c;
+}
+
+.inativo {
+    color: #ff4d4d;
+}
+
+/* HISTÓRICO */
+.item {
+    border-bottom: 1px solid #444;
+    padding: 8px 0;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  /* SIDEBAR vira topo */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .sidebar img {
+    width: 50px;
+    margin: 0;
+  }
+
+  .sidebar h2 {
+    font-size: 16px;
+  }
+
+  .sidebar p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* MAIN ocupa tudo */
+  .main {
+    padding: 15px;
+  }
+
+  /* HEADER empilha */
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* INPUT ocupa largura total */
+  input {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  /* CARD mais compacto */
+  .card {
+    padding: 15px;
+  }
+}
