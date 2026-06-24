@@ -4,22 +4,27 @@ body {
     background: #1e1e1e;
     color: white;
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-y: auto;
 }
 
 /* SIDEBAR */
 .sidebar {
     width: 220px;
     background: orangered;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;  fica no meio da barra lateral vertical */
+    align-items: center; /* centraliza horizontalmente */
 }
 
- .sidebar img{
-    display: block;
-    margin: 20px auto;
-    width: 100px;
- }
+.sidebar img{
+   position: fixed;
+    margin-top: 20px;
+}
 
 .sidebar h2 {
     margin: 0;
@@ -31,6 +36,7 @@ body {
 }
 
 /* CONTEÚDO */
+
 .main {
     flex: 1;
     padding: 20px;
@@ -49,6 +55,27 @@ body {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas igual imagem 2 */
+    gap: 15px;
+}
+ 
+.box {
+    background: linear-gradient(145deg, #3a3a3a, #2f2f2f);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: 0.2s;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.box small {
+    display: block;
+    color: #aaa;
+    margin-bottom: 5px;
+    font-size: 12px;
 }
 
 /* INPUT */
@@ -75,6 +102,7 @@ button:hover {
 }
 
 /* STATUS */
+
 .ativo {
     color: #00ff9c;
 }
@@ -89,11 +117,86 @@ button:hover {
     padding: 8px 0;
 }
 
-@media (max-width: 768px) {
+/* CONTAINER LOADING */
+.loading-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
 
+/* SPINNER */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #444;
+    border-top: 4px solid #ec7000;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes girar {
+    to { transform: rotate(360deg); }
+}
+
+/* TEXTO */
+.loading-text {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+/* BARRA DE PROGRESSO */
+.progress-bar {
+    width: 50%;
+    height: 6px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: #003fec;
+    animation: carregando 1s linear forwards;
+
+}
+
+@keyframes carregando {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+/* SKELETON */
+.skeleton {
+    background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-box {
+    height: 50px;
+}
+
+#resultado {
+    transition: opacity 0.3s ease;
+}
+
+/*Responsividade*/
+@media (max-width: 768px) {
   body {
     flex-direction: column;
-    overflow-x: hidden;
+    display: block;
+    overflow-y: auto;
   }
 
   /* SIDEBAR vira topo */
@@ -139,9 +242,9 @@ button:hover {
   }
 
   button {
-      width: 100%;
-       padding: 12px;
-      font-size: 16px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
   }
 
   /* CARD mais compacto */
@@ -149,3 +252,43 @@ button:hover {
     padding: 15px;
   }
 }
+
+@media (max-width: 600px) {
+      body {
+        display: block;
+        overflow-y: auto;
+    }
+.main {
+        min-height: 100vh;
+        padding: 10px;
+    }
+    .sidebar {
+        display: none; /* esconde menu lateral no celular */
+
+    }
+    .grid {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+    input {
+        width: 100%; /* input ocupa a tela toda */
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%; /* botão também */
+    }
+    .header h1 {
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
