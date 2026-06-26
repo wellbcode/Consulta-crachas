@@ -261,7 +261,7 @@ button:hover {
     }
 }
 
-@media (max-width: 400px) {
+/*@media (max-width: 400px) {
       body {
         display: block;
         overflow-y: auto;
@@ -273,23 +273,20 @@ button:hover {
     .sidebar {
         display: none; /* esconde menu lateral no celular */
 
-    }
+    /*}
     .grid {
         grid-template-columns: 1fr; /* 1 coluna no celular */
-    }
+   /* }
     input {
         padding: 16px;
         width: 100%; /* input ocupa a tela toda */
-        margin-bottom: 10px;
+      /*  margin-bottom: 10px;
         box-sizing: border-box;
-    }
+   /* }
     button {
         width: 100%; /* botão também */
-    }
-    .header h1 {
-        font-size: 30px;
-    }
-}
+   /* }
+}*/
 
 
 
