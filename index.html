@@ -27,6 +27,8 @@
         <div class="card">
             <input id="inputCracha" placeholder="Digite o nº do crachá">
             <button onclick="consultar()">Consultar</button>
+               <!-- BOTÃO LIMPAR -->
+            <button id="btnLimpar" onclick="limpar()">Limpar</button>
         </div>
 
         <!-- LOADING -->
@@ -36,10 +38,19 @@
 
         <div id="resultado"></div>
 
-          <!-- HISTÓRICO -->
+          <!-- HISTÓRICO 
         <div class="card">
             <h3>Histórico de Consultas</h3>
             <div id="historico"></div>
+        </div>-->
+
+        <!-- HISTÓRICO -->
+        <div class="card">
+            <div class="historico-topo">
+                <h3>Últimas consultas:</h3>
+                <button id="toggleHistorico">🔽</button>
+            </div>
+            <div id="historico" class="historico-conteudo"></div>
         </div>
     </div>
 

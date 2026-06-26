@@ -23,7 +23,8 @@ Aplicação web desenvolvida para consultar e identificar automaticamente a loca
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/wellbcode/consulta-crachas.git 
+git clone https://github.com/wellbcode/Consulta-crachas.git 
+🔗 Acesse o site: https://wellbcode.github.io/Consulta-crachas/
 ```
 
 2. Entre na pasta do projeto:

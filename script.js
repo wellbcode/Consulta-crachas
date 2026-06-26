@@ -281,22 +281,22 @@ function consultar(){
                 <div class="card">
                     <div class="grid">
                         <div class="box">
-                            <small>Número</small>
+                            <small>Número:</small>
                             <div>${dado.numero}</div>
                         </div>
 
                         <div class="box">
-                            <small>Tipo</small>
+                            <small>Tipo:</small>
                             <div>${dado.tipo}</div>
                         </div>
 
-                        <div class="box">
-                            <small>Filial</small>
+                        <div class="box"> 
+                            <small>Filial:</small>
                             <div>${dado.polo}</div>
-                        </div>
+                        </div> 
 
                         <div class="box">
-                            <small>Status</small>
+                            <small>Status:</small>
                             <div class="${dado.status === 'Ativo' ? 'ativo' : 'inativo'}">
                                 ${dado.status}
                             </div>
@@ -333,3 +333,23 @@ function renderHistorico(){
         </div>
     `).join('');
 }
+
+/*Botão limpar imputs*/
+document.getElementById("btnLimpar").addEventListener("click", limpar);
+    function limpar() {
+        document.getElementById("inputCracha").value = "";
+        document.getElementById("resultado").innerHTML = "";
+        document.getElementById("loading").innerHTML = "";
+        document.getElementById("inputCracha").focus();
+    }
+
+/*Botão limpar recolher e espandir*/
+const btnToggle = document.getElementById("toggleHistorico");
+const historicoBox = document.getElementById("historico");
+
+btnToggle.addEventListener("click", () => {
+    historicoBox.classList.toggle("recolhido");
+    btnToggle.textContent = historicoBox.classList.contains("recolhido")
+        ? "🔼"
+        : "🔽";
+});

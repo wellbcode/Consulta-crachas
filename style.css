@@ -36,7 +36,6 @@ body {
 }
 
 /* CONTEÚDO */
-
 .main {
     flex: 1;
     padding: 20px;
@@ -64,8 +63,10 @@ body {
 }
  
 .box {
+    border-left: 2px solid#d46000;
     background: linear-gradient(145deg, #3a3a3a, #2f2f2f);
     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    filter: drop-shadow(2px 1px 5px #d46000) ;
     transition: 0.2s;
     padding: 15px;
     border-radius: 10px;
@@ -191,66 +192,73 @@ button:hover {
     transition: opacity 0.3s ease;
 }
 
-/*Responsividade*/
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-    display: block;
-    overflow-y: auto;
-  }
-
-  /* SIDEBAR vira topo */
-  .sidebar {
-    width: 100%;
-    height: auto;
+/*úlimas consultas*/
+.historico-topo {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-  }
+}
 
-  .sidebar img {
-    width: 50px;
-    margin: 0;
-  }
-
-  .sidebar h2 {
+#toggleHistorico {
+    background: transparent;
+    border: none;
     font-size: 16px;
-  }
+    cursor: pointer;
 
-  .sidebar p {
-    margin: 0;
-    font-size: 14px;
-  }
+}
 
-  /* MAIN ocupa tudo */
-  .main {
-    padding: 15px;
-  }
+.historico-conteudo {
+    max-height: 250px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
 
-  /* HEADER empilha */
-  .header {
-    flex-direction: column;
-    gap: 10px;
-  }
+/* estado recolhido */
+.historico-conteudo.recolhido {
+    max-height: 0;
+    opacity: 0;
+}
 
-  /* INPUT ocupa largura total */
-  input {
-    width: 95%;
-    margin-bottom: 10px;
-  }
-
-  button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-  }
-
-  /* CARD mais compacto */
-  .card {
-    padding: 15px;
-  }
+/*Responsividade*/
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        display: block;
+        overflow-y: auto;
+    }
+    .main {
+        padding: 10px;
+    }
+    .header { /* HEADER empilha */
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .sidebar {
+        display: none; /* esconde menu lateral no celular */
+    }
+    .grid {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+    input {
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 16px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    button {
+        font-size: 16px;
+        padding: 16px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .card {
+    padding: 10px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -258,7 +266,7 @@ button:hover {
         display: block;
         overflow-y: auto;
     }
-.main {
+    .main {
         min-height: 100vh;
         padding: 10px;
     }
@@ -270,6 +278,7 @@ button:hover {
         grid-template-columns: 1fr; /* 1 coluna no celular */
     }
     input {
+        padding: 16px;
         width: 100%; /* input ocupa a tela toda */
         margin-bottom: 10px;
         box-sizing: border-box;
@@ -278,13 +287,9 @@ button:hover {
         width: 100%; /* botão também */
     }
     .header h1 {
-        font-size: 18px;
+        font-size: 30px;
     }
 }
-
-
-
-
 
 
 
