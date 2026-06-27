@@ -272,7 +272,6 @@ button:hover {
     }
     .sidebar {
         display: none; /* esconde menu lateral no celular */
-
     /*}
     .grid {
         grid-template-columns: 1fr; /* 1 coluna no celular */
