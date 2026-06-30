@@ -20,12 +20,12 @@ Aplicação web desenvolvida para consultar e identificar automaticamente a loca
 
 ## 🖥️ Como Executar
 
-1. Clone o repositório:
+---
 
-```bash
-git clone https://github.com/wellbcode/Consulta-crachas.git 
-🔗 Acesse o site: https://wellbcode.github.io/Consulta-crachas/
-```
+## 🚀 Como executar
+
+🔗 Acesse o site: ([https://wellbcode.github.io/Consulta-crachas/])
+Clone o repositório: ([https://github.com/wellbcode/Consulta-crachas.git])
 
 2. Entre na pasta do projeto:
 
